@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded square background with Cloudflare orange -->
+  <rect width="512" height="512" rx="64" fill="#F38020"/>
+  
+  <!-- Analytics chart icon in white, centered and larger -->
+  <g transform="translate(128, 128)">
+    <rect x="0" y="160" width="64" height="160" rx="8" fill="#FFFFFF"/>
+    <rect x="84" y="80" width="64" height="240" rx="8" fill="#FFFFFF"/>
+    <rect x="168" y="0" width="64" height="320" rx="8" fill="#FFFFFF"/>
+    <rect x="252" y="120" width="64" height="200" rx="8" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Small cloud icon in top right to indicate Cloudflare -->
+  <g transform="translate(380, 40)">
+    <path d="M40 30C40 20 32 12 22 12C20 12 18 12.5 16 13.5C14 6 7 0 0 0C-10 0 -18 8 -18 18C-18 19 -17.5 20 -17.5 21C-23 22 -28 27 -28 34C-28 41 -22 47 -15 47H38C45 47 51 41 51 34C51 27 45 21 38 21C39 20.5 40 19.5 40 18V30Z" fill="#FFFFFF" opacity="0.3"/>
+  </g>
+</svg>
+

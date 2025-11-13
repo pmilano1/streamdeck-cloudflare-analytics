@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cloudflare Analytics Settings</title>
+  <script src="sdpi-components.js"></script>
+</head>
+<body>
+  <sdpi-item label="Cloudflare API Token">
+    <sdpi-password setting="apiToken" placeholder="Enter your Cloudflare API token"></sdpi-password>
+    <sdpi-info>Create an API token with Analytics:Read permission at <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Cloudflare Dashboard</a></sdpi-info>
+  </sdpi-item>
+
+  <sdpi-item label="Zone ID">
+    <sdpi-textfield setting="zoneId" placeholder="Enter your zone ID"></sdpi-textfield>
+    <sdpi-info>Find your Zone ID in the Cloudflare dashboard under your domain's Overview page</sdpi-info>
+  </sdpi-item>
+
+  <sdpi-item label="Display Metric">
+    <sdpi-select setting="displayMetric">
+      <option value="requests">Total Requests</option>
+      <option value="bandwidth">Bandwidth</option>
+      <option value="threats">Threats Blocked</option>
+      <option value="visitors">Unique Visitors</option>
+      <option value="cache">Cache Hit Ratio</option>
+    </sdpi-select>
+  </sdpi-item>
+
+  <sdpi-item label="Refresh Interval">
+    <sdpi-select setting="refreshInterval">
+      <option value="1">1 minute</option>
+      <option value="5" selected>5 minutes</option>
+      <option value="10">10 minutes</option>
+      <option value="15">15 minutes</option>
+      <option value="30">30 minutes</option>
+      <option value="60">1 hour</option>
+    </sdpi-select>
+  </sdpi-item>
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.DS_Store
+com.milanese.cloudflare-analytics.sdPlugin/bin/
+*.js.map
+*.d.ts
+logs/
+test-api.js
+

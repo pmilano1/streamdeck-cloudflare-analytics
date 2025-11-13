@@ -1,0 +1,48 @@
+{
+  "Name": "Cloudflare Analytics",
+  "UUID": "com.milanese.cloudflare-analytics",
+  "Version": "1.0.0.0",
+  "Author": "Peter Milanese",
+  "Description": "Monitor your website's Cloudflare analytics in real-time",
+  "Category": "Analytics",
+  "CategoryIcon": "imgs/category-icon",
+  "Icon": "imgs/plugin-icon",
+  "CodePath": "bin/plugin.js",
+  "PropertyInspectorPath": "ui/property-inspector.html",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "6.4"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.15"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "enabled"
+  },
+  "Actions": [
+    {
+      "Name": "Cloudflare Metrics",
+      "UUID": "com.milanese.cloudflare-analytics.stats",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Display Cloudflare analytics metrics (requests, bandwidth, threats, visitors, cache hit ratio)",
+      "States": [
+        {
+          "Image": "imgs/key",
+          "Name": "Default"
+        }
+      ],
+      "PropertyInspectorPath": "ui/property-inspector.html",
+      "SupportedInMultiActions": false,
+      "Controllers": ["Keypad"]
+    }
+  ]
+}
+
