@@ -25,6 +25,19 @@ interface Settings extends JsonObject {
 }
 
 /**
+ * Returns a copy of `settings` safe to write to the plugin log — the SDK
+ * writes whatever is passed to `logger.*` straight to a logfile on the
+ * user's machine, and `settings.apiToken` is that user's live Cloudflare
+ * API token, entered via the property inspector. Lowering the log level
+ * does not fix this: these calls are at INFO, the level plugin.ts sets as
+ * the shipped default, so the token would still be written by anyone
+ * running this plugin as installed.
+ */
+function redactSettings(settings: Settings): Settings {
+  return { ...settings, apiToken: settings.apiToken ? '[redacted]' : settings.apiToken };
+}
+
+/**
  * Stream Deck action that displays Cloudflare analytics metrics.
  */
 @action({ UUID: 'com.milanese.cloudflare-analytics.stats' })
@@ -38,7 +51,7 @@ export class StatsAction extends SingletonAction<Settings> {
     const context = ev.action.id;
     this.contexts.set(context, settings);
 
-    streamDeck.logger.info('onWillAppear - Settings:', JSON.stringify(settings));
+    streamDeck.logger.info('onWillAppear - Settings:', JSON.stringify(redactSettings(settings)));
 
     // Set dark background and disable title
     await ev.action.setImage('data:image/svg+xml;base64,' + Buffer.from(`
@@ -73,7 +86,7 @@ export class StatsAction extends SingletonAction<Settings> {
     const settings = ev.payload.settings;
     const context = ev.action.id;
 
-    streamDeck.logger.info('onDidReceiveSettings - Settings:', JSON.stringify(settings));
+    streamDeck.logger.info('onDidReceiveSettings - Settings:', JSON.stringify(redactSettings(settings)));
 
     this.contexts.set(context, settings);
 
