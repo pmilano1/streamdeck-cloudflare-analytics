@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/peter-milanese/streamdeck-cloudflare-analytics.git"
+    "url": "https://github.com/pmilano1/streamdeck-cloudflare-analytics.git"
   },
   "dependencies": {
     "@elgato/streamdeck": "^1.0.0",
@@ -33,5 +33,9 @@
     "@types/node": "^20.11.5",
     "rollup": "^4.9.6",
     "typescript": "^5.3.3"
+  },
+  "homepage": "https://github.com/pmilano1/streamdeck-cloudflare-analytics#readme",
+  "bugs": {
+    "url": "https://github.com/pmilano1/streamdeck-cloudflare-analytics/issues"
   }
 }
